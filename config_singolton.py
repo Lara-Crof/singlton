@@ -22,8 +22,8 @@ class ConfigFile(configparser.ConfigParser):
 
     def __new__(cls, *args):
         if not hasattr(cls, 'instance'):
-            cls.instance = super(ConfigFile, cls).__new__(cls)
-        return cls.instance
+            cls._instance = super(ConfigFile, cls).__new__(cls)
+        return cls._instance
     
     def __init__(self, path: Optional[str]=None) -> None:
         super().__init__()
