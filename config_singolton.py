@@ -43,5 +43,4 @@ if __name__ == '__main__':
     test_conf.reload()
     conf2 = ConfigFile(path)
     assert test_conf == conf2
-
     print(test_conf['core']['dags_are_paused_at_creation'])
