@@ -10,7 +10,8 @@
 import configparser
 from typing import Optional
 
-path = 'config.ini'
+# path = 'config.ini'
+path = 'airflow.cfg'
 
 class ConfigFile(configparser.ConfigParser):
     """Класс, который читает стандартный файл конфигурации,
@@ -38,9 +39,9 @@ class ConfigFile(configparser.ConfigParser):
     
 if __name__ == '__main__':
     test_conf = ConfigFile(path)
-    print(test_conf.get('APP', 'DEBUG'))
+    print(test_conf.get('core', 'dags_folder'))
     test_conf.reload()
     conf2 = ConfigFile(path)
     assert test_conf == conf2
 
-    print(test_conf['DATABASE']['HOST'])
+    print(test_conf['core']['dags_are_paused_at_creation'])
