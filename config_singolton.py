@@ -10,7 +10,7 @@
 import configparser
 from typing import Optional
 
-# path = 'config.ini'
+
 path = 'airflow.cfg'
 
 class ConfigFile(configparser.ConfigParser):
